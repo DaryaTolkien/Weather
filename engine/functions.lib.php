@@ -37,6 +37,10 @@ function prepareVariables($page_name, $action = ""){
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
+			
+			if(isset($_SESSION['user'])){
+				$vars["statmouth"] = renderPage("stat_mouth");
+			}
             break;
 		/*case "login":
             // если уже залогинен, то выбрасываем на главную
