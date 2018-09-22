@@ -1,1 +1,0 @@
-<div class="login"><a href='/login/'>Войти</a></div>

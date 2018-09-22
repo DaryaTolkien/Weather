@@ -1,1 +1,0 @@
-<tr class="itog_earth"><td>Итог:</td><td class="a">{{JAN}}</td><td class="b">{{FEB}}</td><td class="c">{{MAR}}</td><td class="d">{{APR}}</td><td class="e">{{MAY}}</td><td class="f">{{JUN}}</td><td class="g">{{JUL}}</td><td class="h">{{AUG}}</td><td class="i">{{SEP}}</td><td class="j">{{OCT}}</td><td class="k">{{NOV}}</td><td class="l">{{DEK}}</td><td>{{MEANS}}</td></tr>

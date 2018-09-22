@@ -1,1 +1,0 @@
-<div class="hours"><p>{{TIMES}}</p><img src="{{PRECIPITATION}}"> <span class="hours_number">+{{TEMPERATURE_MAX}}</span></div>
