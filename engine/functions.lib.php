@@ -37,6 +37,14 @@ function prepareVariables($page_name, $action = ""){
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
+			
+			if(isset($_SESSION['user'])){
+				$vars["update"] = renderPage("update_block"); //Позволяет самому менять значения в таблице погоды
+			}
+			else{
+                $vars["update"] = null; 
+            }
+			
             break;
 		/*case "login":
             // если уже залогинен, то выбрасываем на главную
@@ -73,7 +81,7 @@ function prepareVariables($page_name, $action = ""){
             if(!empty($_POST['login']) && !empty($_POST["password"])){
 			   $vars["autherror"] = "";
 			   if(vhodadmin() == 1){
-				 header("Location: /adminka/");
+				 header("Location: /");
 				 } else{
 				   header("Location: /");
 				   $vars["autherror"] = "Неправильный логин/пароль";

@@ -1,6 +1,6 @@
 <h2>Екатеринбург</h2>
 
-<table style="border: 3px solid #004489; width: 100%;" border="1">
+<table style="border: 3px solid #004489; width: 99%;" border="1">
    <tr>
     <th>Год</th>
     <th>Янв</th>
@@ -37,7 +37,7 @@
 	</tr>
 </table>
 
-<table border="1" style="margin-top: 50px; border: 3px solid #004489; width: 100%;">
+<table border="1" style="margin-top: 50px; border: 3px solid #004489; width: 99%;">
 	<caption>Экстремумы за зиму</caption>
 <tr>
     <th>Год</th>
