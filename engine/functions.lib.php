@@ -48,32 +48,13 @@ function prepareVariables($page_name, $action = ""){
 			if(isset($_POST["submit"])){
 				$vars["update"] = renderPage("update_form_block");
 			}
-            break;
-		case "update":
+            //Вычисляем год и месяц который надо изменить
+			$month = $_POST['earth'];
+			$value = $_POST['update_stat'];
+			print_r($_POST);
 			//update($)
 			break;
-		/*case "login":
-            // если уже залогинен, то выбрасываем на главную
-            if(alreadyLoggedIn()){
-                header("Location: /");
-            }
-
-            // если есть куки, то авторизуем сразу
-            if(checkAuthWithCookie()){
-                header("Location: /");
-            }
-            if(!empty($_POST['login']) && !empty($_POST["password"])){
-			   $vars["autherror"] = "";
-			   if(vhodadmin() == 1){
-				 header("Location: /adminka/");
-				 } else{
-				   header("Location: /");
-				   $vars["autherror"] = "Неправильный логин/пароль";
-				   }	      
-				 } else {
-				   header("Location: /");
-			   }				   
-            break;*/
+		
 		case "logins":
 			// если уже залогинен, то выбрасываем на главную
             if(alreadyLoggedIn()){
@@ -115,8 +96,8 @@ function prepareVariables($page_name, $action = ""){
     return $vars;
 }
 //Функция изменения чисел в админке
-function update(){
-	$sql = "UPDATE"
+function update($month, $value, $earth){
+	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
 }
 
 //Функция считывания среднего итога за все месяцы
