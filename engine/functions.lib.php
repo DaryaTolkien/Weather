@@ -114,7 +114,10 @@ function prepareVariables($page_name, $action = ""){
 
     return $vars;
 }
-
+//Функция изменения чисел в админке
+function update(){
+	$sql = "UPDATE"
+}
 
 //Функция считывания среднего итога за все месяцы
 function get_norma($town){
