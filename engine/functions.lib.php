@@ -33,37 +33,31 @@ function prepareVariables($page_name, $action = ""){
 			$vars["wind"] = get_future();
             break;
         case "ekb_archiv":
-            $vars["table"] = get_archiv('ekb_archiv');
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
 			
-			if(isset($_SESSION['user'])){
-				$vars["statmouth"] = renderPage("stat_mouth");
+			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
+				$vars["table"] = renderPage("update_block"); //если нет, то просто генерируем данные
+				$vars["update"] = get_archiv('ekb_archiv');
+				
+				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
+                //Вычисляем год и месяц который надо изменить
+			      $month = $_POST['month'];
+				  $earth = $_POST['earth'];
+			      $valus = htmlspecialchars($_POST['update_stat']);
+				  $value = (float) $valus;
+			      //var_dump($value);
+			      update($month, $value, $earth);
+			      }
 			}
-            break;
-		/*case "login":
-            // если уже залогинен, то выбрасываем на главную
-            if(alreadyLoggedIn()){
-                header("Location: /");
+			
+			else{
+				$vars["table"] = get_archiv('ekb_archiv'); //если да, то генерируем шаблон с формой для update
             }
-
-            // если есть куки, то авторизуем сразу
-            if(checkAuthWithCookie()){
-                header("Location: /");
-            }
-            if(!empty($_POST['login']) && !empty($_POST["password"])){
-			   $vars["autherror"] = "";
-			   if(vhodadmin() == 1){
-				 header("Location: /adminka/");
-				 } else{
-				   header("Location: /");
-				   $vars["autherror"] = "Неправильный логин/пароль";
-				   }	      
-				 } else {
-				   header("Location: /");
-			   }				   
-            break;*/
+			
+			break;
+		
 		case "logins":
 			// если уже залогинен, то выбрасываем на главную
             if(alreadyLoggedIn()){
@@ -77,7 +71,7 @@ function prepareVariables($page_name, $action = ""){
             if(!empty($_POST['login']) && !empty($_POST["password"])){
 			   $vars["autherror"] = "";
 			   if(vhodadmin() == 1){
-				 header("Location: /adminka/");
+				 header("Location: /");
 				 } else{
 				   header("Location: /");
 				   $vars["autherror"] = "Неправильный логин/пароль";
@@ -104,7 +98,12 @@ function prepareVariables($page_name, $action = ""){
 
     return $vars;
 }
-
+//Функция изменения чисел в админке
+function update($month, $value, $earth){
+	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
+	//print_r($sql);die();
+	executeQuery($sql);
+}
 
 //Функция считывания среднего итога за все месяцы
 function get_norma($town){

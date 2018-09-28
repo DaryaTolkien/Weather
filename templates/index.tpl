@@ -9,7 +9,7 @@
 			   <div class="weather_hours">
 			    {{FUTURE}}
 			   </div>
-			  <p style="color: aliceblue; font-size: 28px;">Скорость ветра, м/с</p>
+			  <p style="color: aliceblue; font-size: 28px;">Скорость ветраf, м/с</p>
 			  <div class="wind">
 			     {{WIND}}
 			  </div>

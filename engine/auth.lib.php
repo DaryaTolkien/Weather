@@ -3,8 +3,8 @@
 
 //Функция входа в админку
 function vhodadmin(){
-	$username = $_POST['login'];
-    $password = $_POST['password'];
+	$username = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
     $link = getConnection();
     $sql = "SELECT login, password FROM users WHERE login = '".mysqli_real_escape_string($link, $username)."'";
     $user_data = getRowResult($sql, $link);
