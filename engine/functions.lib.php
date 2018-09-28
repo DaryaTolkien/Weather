@@ -33,26 +33,29 @@ function prepareVariables($page_name, $action = ""){
 			$vars["wind"] = get_future();
             break;
         case "ekb_archiv":
-            $vars["table"] = get_archiv('ekb_archiv');
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
 			
-			if(isset($_SESSION['user'])){ //Позволяет самому менять значения в таблице погоды
-				$vars["update"] = renderPage("update_block"); 
+			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
+				$vars["table"] = renderPage("update_block"); //если нет, то просто генерируем данные
+				$vars["update"] = get_archiv('ekb_archiv');
+				
+				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
+                //Вычисляем год и месяц который надо изменить
+			      $month = $_POST['month'];
+				  $earth = $_POST['earth'];
+			      $valus = htmlspecialchars($_POST['update_stat']);
+				  $value = (float) $valus;
+			      //var_dump($value);
+			      update($month, $value, $earth);
+			      }
 			}
+			
 			else{
-                $vars["update"] = null; 
+				$vars["table"] = get_archiv('ekb_archiv'); //если да, то генерируем шаблон с формой для update
             }
 			
-			if(isset($_POST["submit"])){
-				$vars["update"] = renderPage("update_form_block");
-			}
-            //Вычисляем год и месяц который надо изменить
-			$month = $_POST['earth'];
-			$value = $_POST['update_stat'];
-			print_r($_POST);
-			//update($)
 			break;
 		
 		case "logins":
@@ -98,6 +101,8 @@ function prepareVariables($page_name, $action = ""){
 //Функция изменения чисел в админке
 function update($month, $value, $earth){
 	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
+	//print_r($sql);die();
+	executeQuery($sql);
 }
 
 //Функция считывания среднего итога за все месяцы
