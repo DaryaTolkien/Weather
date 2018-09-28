@@ -38,7 +38,7 @@ function prepareVariables($page_name, $action = ""){
 			$vars["extr"] = get_archiv('ekb_archiv');
 			
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
-				$vars["table"] = renderPage("update_block"); //если нет, то просто генерируем данные
+				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('ekb_archiv');
 				
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
@@ -47,13 +47,12 @@ function prepareVariables($page_name, $action = ""){
 				  $earth = $_POST['earth'];
 			      $valus = htmlspecialchars($_POST['update_stat']);
 				  $value = (float) $valus;
-			      //var_dump($value);
-			      update($month, $value, $earth);
+			      update($month, $value, $earth);//функция апдейта в БД-
 			      }
 			}
 			
 			else{
-				$vars["table"] = get_archiv('ekb_archiv'); //если да, то генерируем шаблон с формой для update
+				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
             }
 			
 			break;
@@ -69,9 +68,8 @@ function prepareVariables($page_name, $action = ""){
                 header("Location: /");
             }
             if(!empty($_POST['login']) && !empty($_POST["password"])){
-			   $vars["autherror"] = "";
 			   if(vhodadmin() == 1){
-				 header("Location: /");
+				 header("Location: /archiv/");
 				 } else{
 				   header("Location: /");
 				   $vars["autherror"] = "Неправильный логин/пароль";

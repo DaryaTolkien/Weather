@@ -160,7 +160,7 @@
 
 	
 <table border="1" style="margin-top: 50px; border: 3px solid #004489; width: 50%;">
-<caption>Статистика самых холодных и теплых годов</caption>
+<caption>Статистика самых холодных и теплых времен года</caption>
 <tr>
 	<th>&nbsp;</th>
 	<th class="hot">Теплый</th>

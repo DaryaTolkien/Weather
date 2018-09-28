@@ -282,12 +282,16 @@ weather_num img{
 
 .login_form{
 	margin: auto;
+	font-size: 20px;
 }
 
 .login_form input[type="text"], input[type="password"]{
-	width: 30px;
+	 font-family: 'Roboto', sans-serif;
+	width: 300px;
 	height: 50px;
 	margin: auto;
+	padding: 10px;
+	font-size: 25px;
 	background: transparent;
 	border: 3px solid transparent;
 	-moz-border-image: -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
@@ -296,7 +300,33 @@ weather_num img{
 	border-image-slice: 1;
 }
 
+.login_form input:focus{
+	box-shadow: 0 0 10px rgba(255,0,229,0.7);
+}
 
+.login_form input[type="submit"]{
+    width: 300px;
+	height: 50px;
+	margin: auto;
+	padding: 10px;
+	font-size: 23px;
+	color: #ff0094;
+	background: transparent;
+	border: 3px solid transparent;
+	-moz-border-image: -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+	-webkit-border-image: -webkit-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+	border-image: linear-gradient(to left, #a065aa 0%, #4f72b8 100%);
+	border-image-slice: 1;
+	transition-property:all;
+	transition-duration: 0.5s;
+}
+
+.login_form input[type="submit"]:hover{
+	 font-family: 'Roboto', sans-serif;
+	background: linear-gradient(to left, #a065aa 0%, #4f72b8 100%);
+	cursor: pointer;
+	color: white;
+}
 
 
 
