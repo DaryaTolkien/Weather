@@ -278,8 +278,23 @@ weather_num img{
 	flex-wrap: nowrap;
 }
 
+/*Форма входа на сайт*/
 
+.login_form{
+	margin: auto;
+}
 
+.login_form input[type="text"], input[type="password"]{
+	width: 30px;
+	height: 50px;
+	margin: auto;
+	background: transparent;
+	border: 3px solid transparent;
+	-moz-border-image: -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+	-webkit-border-image: -webkit-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+	border-image: linear-gradient(to left, #a065aa 0%, #4f72b8 100%);
+	border-image-slice: 1;
+}
 
 
 

@@ -1,5 +1,5 @@
-<p class="red">{{AUTHERROR}}</p>
-  <form method="post" action="/logins/">
+
+  <form method="post" action="/logins/" class="login_form">
         <p><input type="text" name="login" placeholder="Логин"/></p>
         <p><input type="password" name="password" placeholder="Пароль"/></p>
         <p>Запомнить меня:<input type="checkbox" name="rememberme" /></p>
