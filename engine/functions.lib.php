@@ -38,7 +38,7 @@ function prepareVariables($page_name, $action = ""){
 			$vars["extr"] = get_archiv('ekb_archiv');
 			
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
-				$vars["table"] = renderPage("update_block"); //если нет, то просто генерируем данные
+				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('ekb_archiv');
 				
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
@@ -47,17 +47,18 @@ function prepareVariables($page_name, $action = ""){
 				  $earth = $_POST['earth'];
 			      $valus = htmlspecialchars($_POST['update_stat']);
 				  $value = (float) $valus;
-			      //var_dump($value);
-			      update($month, $value, $earth);
+			      update($month, $value, $earth);//функция апдейта в БД-
 			      }
 			}
 			
 			else{
-				$vars["table"] = get_archiv('ekb_archiv'); //если да, то генерируем шаблон с формой для update
+				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
             }
 			
 			break;
-		
+		case "ekb_archiv":
+			
+			break;
 		case "logins":
 			// если уже залогинен, то выбрасываем на главную
             if(alreadyLoggedIn()){
@@ -69,9 +70,8 @@ function prepareVariables($page_name, $action = ""){
                 header("Location: /");
             }
             if(!empty($_POST['login']) && !empty($_POST["password"])){
-			   $vars["autherror"] = "";
 			   if(vhodadmin() == 1){
-				 header("Location: /");
+				 header("Location: /archiv/");
 				 } else{
 				   header("Location: /");
 				   $vars["autherror"] = "Неправильный логин/пароль";
@@ -99,12 +99,25 @@ function prepareVariables($page_name, $action = ""){
     return $vars;
 }
 //Функция изменения чисел в админке
-function update($month, $value, $earth){
+function update(){
+	$month = $_POST['month'];
+	$earth = $_POST['earth'];
+	$valus = htmlspecialchars($_POST['update_stat']);
+	$value = (float) $valus;
+	update($month, $value, $earth);//функция апдейта в БД-
 	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
 	//print_r($sql);die();
 	executeQuery($sql);
 }
 
+//Функция генерации админки с учетом регистрации
+function get_admin{
+	$month = $_POST['month'];
+	$earth = $_POST['earth'];
+	$valus = htmlspecialchars($_POST['update_stat']);
+	$value = (float) $valus;
+	update($month, $value, $earth);//функция апдейта в БД-
+		}
 //Функция считывания среднего итога за все месяцы
 function get_norma($town){
 	$sql = "SELECT ROUND(AVG(January),1) AS Jan, ROUND(AVG(February),1) AS Feb, ROUND(AVG(March),1) AS Mar, ROUND(AVG(April),1) AS Apr, ROUND(AVG(May),1) AS May, ROUND(AVG(June),1) AS Jun, ROUND(AVG(July),1) AS Jul, ROUND(AVG(August),1) AS Aug, ROUND(AVG(September),1) AS Sep, ROUND(AVG(October),1) AS Oct, ROUND(AVG(November),1) AS Nov, ROUND(AVG(December),1) AS Dek FROM `$town`";

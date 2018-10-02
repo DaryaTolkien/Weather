@@ -1,4 +1,4 @@
-<h2>Екатеринбург</h2>
+<h2>Санкт-Петербург</h2>
 
 <table style="border: 3px solid #004489; width: 99%;" border="1">
    <tr>
@@ -251,37 +251,3 @@ table_colorize(j, arr_class, 3.5);
 table_colorize(k, arr_class, -5.8);
 table_colorize(l, arr_class, -11);
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

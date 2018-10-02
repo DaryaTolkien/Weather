@@ -1,14 +1,15 @@
 h2{
-	color: white;
+	color: darkorange;
 	text-align: center;
-	font-weight: 100;
+	font-weight: 400;
+	font-size: 37px;
 }
 
 
 
 a{
 	text-decoration: none;
-	color: aliceblue;
+	color:white;
 }
 
 .archiv{
@@ -27,7 +28,7 @@ a{
 	margin: 20px;
 	width: 25%;
 	color: aliceblue;
-	background: linear-gradient(to bottom, #bd1e76 0%, transparent 100%);
+	background-image: linear-gradient(to left, #ef4c46 0%, #ee4d79 100%);
 	transition-property:all;
 	transition-duration: 0.5s;
 }
@@ -69,7 +70,8 @@ table td:first-child{
 }
 
 table caption{
-	color: aliceblue;
+	color: mediumvioletred;
+	padding: 5px;
 	font-size: 22px;
 }
 
@@ -95,11 +97,6 @@ table caption{
 	color:darkblue;
 }
 
-table caption{
-	color: aliceblue;
-}
-
-
 /*ТАБЛИЦЫ СО СТАТИСТИКОЙ*/
 
 .statitistica{
@@ -114,7 +111,7 @@ table caption{
 	width: 40px;
 	height: 20px;
 	background-color: transparent;
-	border: 1px solid yellow;
+	border: 1px solid darkblue;
 }
 .table_admin button{
 	background-color: deeppink;
