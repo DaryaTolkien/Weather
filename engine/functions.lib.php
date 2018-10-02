@@ -56,7 +56,9 @@ function prepareVariables($page_name, $action = ""){
             }
 			
 			break;
-		
+		case "ekb_archiv":
+			
+			break;
 		case "logins":
 			// если уже залогинен, то выбрасываем на главную
             if(alreadyLoggedIn()){
@@ -97,12 +99,25 @@ function prepareVariables($page_name, $action = ""){
     return $vars;
 }
 //Функция изменения чисел в админке
-function update($month, $value, $earth){
+function update(){
+	$month = $_POST['month'];
+	$earth = $_POST['earth'];
+	$valus = htmlspecialchars($_POST['update_stat']);
+	$value = (float) $valus;
+	update($month, $value, $earth);//функция апдейта в БД-
 	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
 	//print_r($sql);die();
 	executeQuery($sql);
 }
 
+//Функция генерации админки с учетом регистрации
+function get_admin{
+	$month = $_POST['month'];
+	$earth = $_POST['earth'];
+	$valus = htmlspecialchars($_POST['update_stat']);
+	$value = (float) $valus;
+	update($month, $value, $earth);//функция апдейта в БД-
+		}
 //Функция считывания среднего итога за все месяцы
 function get_norma($town){
 	$sql = "SELECT ROUND(AVG(January),1) AS Jan, ROUND(AVG(February),1) AS Feb, ROUND(AVG(March),1) AS Mar, ROUND(AVG(April),1) AS Apr, ROUND(AVG(May),1) AS May, ROUND(AVG(June),1) AS Jun, ROUND(AVG(July),1) AS Jul, ROUND(AVG(August),1) AS Aug, ROUND(AVG(September),1) AS Sep, ROUND(AVG(October),1) AS Oct, ROUND(AVG(November),1) AS Nov, ROUND(AVG(December),1) AS Dek FROM `$town`";

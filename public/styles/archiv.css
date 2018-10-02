@@ -28,7 +28,7 @@ a{
 	margin: 20px;
 	width: 25%;
 	color: aliceblue;
-	background: linear-gradient(to bottom, #bd1e76 0%, transparent 100%);
+	background-image: linear-gradient(to left, #ef4c46 0%, #ee4d79 100%);
 	transition-property:all;
 	transition-duration: 0.5s;
 }
