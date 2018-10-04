@@ -32,26 +32,23 @@ function prepareVariables($page_name, $action = ""){
 			$vars["future"] = get_future();
 			$vars["wind"] = get_future();
             break;
-        case "ekb_archiv":
+        case "ekb_archiv": //Страница архива Екатеринбурга
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
-			
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
 				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('ekb_archiv');
-				
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
-			      update('ekb_archiv');//функция апдейта в БД-
+			      update('ekb_archiv'); //меняем значение в БД
 			      }
 			}
-			
 			else{
 				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
             }
 			
 			break;
-		case "ekb_archiv":
+		case "spb_archiv":
 			
 			break;
 		case "logins":
@@ -94,12 +91,20 @@ function prepareVariables($page_name, $action = ""){
     return $vars;
 }
 //Функция изменения чисел в админке
-function update($lol){
+function update(){
+
+	update($month, $value, $earth);//функция апдейта в БД-
+	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
+	//print_r($sql);die();
+	executeQuery($sql);
+}
+
+//Функция генерации админки с учетом регистрации
+function get_admin{
 	$month = $_POST['month'];
 	$earth = $_POST['earth'];
 	$valus = htmlspecialchars($_POST['update_stat']);
 	$value = (float) $valus;
-	update($month, $value, $earth);//функция апдейта в БД-
 	$sql = "UPDATE $lol SET $month='$value' WHERE Earth=$earth";
 	//print_r($sql);die();
 	executeQuery($sql);
