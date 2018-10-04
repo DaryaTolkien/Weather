@@ -21,19 +21,19 @@
 	{{NORMA}}
 	<tr class="norma_earth">
 	<td>Норма:</td>
-	<td>-12.6</td>
-	<td>-11.1</td>
-	<td>-3.8</td>
-	<td>4.3</td>
-	<td>11.3</td>
-	<td>17.1</td>
-	<td>19</td>
-	<td>15.9</td>
-	<td>9.8</td>
-	<td>3.5</td>
+	<td>-5.5</td>
 	<td>-5.8</td>
-	<td>-11</td>
-	<td>1.9</td>
+	<td>-1.3</td>
+	<td>5.1</td>
+	<td>11.3</td>
+	<td>15.7</td>
+	<td>18.8</td>
+	<td>16.9</td>
+	<td>11.6</td>
+	<td>6.2</td>
+	<td>0.1</td>
+	<td>-3.7</td>
+	<td>4.3</td>
 	</tr>
 </table>
 
