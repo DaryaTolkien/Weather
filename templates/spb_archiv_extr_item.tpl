@@ -1,0 +1,1 @@
+<td>{{EXTREMUM}}</td>

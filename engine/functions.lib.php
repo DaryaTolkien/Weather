@@ -49,7 +49,19 @@ function prepareVariables($page_name, $action = ""){
 			
 			break;
 		case "spb_archiv":
-			
+			$vars["norma"] = get_norma('spb_archiv');
+			$vars["means"] = get_mean('spb_archiv');
+			$vars["extr"] = get_archiv('spb_archiv');
+			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
+				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
+				$vars["update"] = get_archiv('spb_archiv');
+				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
+			      update('spb_archiv'); //меняем значение в БД
+			      }
+			}
+			else{
+				$vars["table"] = get_archiv('spb_archiv'); //если нет, то просто генерируем данные
+            }
 			break;
 		case "logins":
 			// если уже залогинен, то выбрасываем на главную
@@ -91,17 +103,8 @@ function prepareVariables($page_name, $action = ""){
     return $vars;
 }
 //Функция изменения чисел в админке
-function update(){
-
-	update($month, $value, $earth);//функция апдейта в БД-
-	$sql = "UPDATE ekb_archiv SET $month='$value' WHERE Earth=$earth";
-	//print_r($sql);die();
-	executeQuery($sql);
-}
-
-//Функция генерации админки с учетом регистрации
-function get_admin{
-	$month = $_POST['month'];
+function update($lol){
+    $month = $_POST['month'];
 	$earth = $_POST['earth'];
 	$valus = htmlspecialchars($_POST['update_stat']);
 	$value = (float) $valus;
