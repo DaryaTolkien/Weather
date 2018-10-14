@@ -238,16 +238,16 @@ var j = $$('table td.j');
 var k = $$('table td.k');
 var l = $$('table td.l');
 
-table_colorize(a, arr_class, -12.6);
-table_colorize(b, arr_class, -11.1);
-table_colorize(c, arr_class, -3.8);
-table_colorize(d, arr_class, 4.3);
+table_colorize(a, arr_class, -5.5);
+table_colorize(b, arr_class, -5.8);
+table_colorize(c, arr_class, -1.3);
+table_colorize(d, arr_class, 5.1);
 table_colorize(e, arr_class, 11.3);
-table_colorize(f, arr_class, 17.1);
-table_colorize(g, arr_class, 19);
-table_colorize(h, arr_class, 15.9);
-table_colorize(i, arr_class, 9.8);
-table_colorize(j, arr_class, 3.5);
-table_colorize(k, arr_class, -5.8);
-table_colorize(l, arr_class, -11);
+table_colorize(f, arr_class, 15.7);
+table_colorize(g, arr_class, 18.8);
+table_colorize(h, arr_class, 16.9);
+table_colorize(i, arr_class, 11.6);
+table_colorize(j, arr_class, 6.2);
+table_colorize(k, arr_class, 0.1);
+table_colorize(l, arr_class, -3.7);
 </script>
