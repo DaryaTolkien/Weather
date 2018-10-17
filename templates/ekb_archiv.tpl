@@ -200,10 +200,45 @@
 	
 </div>
 
+<script>
+   $('#submit').on('click', function(){
+        var month = $('#month').val();
+	    var earth = $('#earth').val();
+        var update_stat = $('#update_stat').val();
+	      alert(update_stat);
+        $.ajax({
+            url: "/ekb_archiv/",
+            type: "POST",
+            data:{
+                'month': month,
+				'earth': earth,
+				'update_stat': update_stat
+            },
+			success: function() { //Если все нормально
+                  // AjaxFormRequest();
+				 alert('Load was performed.');
+                },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText + '|\n' + status + '|\n' +error);
+              }
+          })
+    };
+</script>
+
+<script>
+	function AjaxFormRequest(){
+		$.ajax({
+            url: "/ekb_archiv/",
+            type: "POST",
+            data: submit_form,
+			success: function() { //Если все нормально
+                   alert('Load was performed.');
+                }
+	})};
+</script>
 
 
 <script>
-
 var arr_class = ['cool','hot','norma'];
 
 function table_colorize(elements, array_class, lol)
