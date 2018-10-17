@@ -74,87 +74,87 @@
 </tr>
 <tr>
     <td>Январь</td>
-	<td class="hot">-5</td>
-	<td>2007</td>
-	<td class="cool">-20.6</td>
-	<td>2006</td>
-</tr>
-<tr>
-    <td>Февраль</td>
-	<td class="hot">-4.1</td>
-	<td>2016</td>
-	<td class="cool">-15.7</td>
+	<td class="hot">-1.7</td>
+	<td>2008</td>
+	<td class="cool">-12.1</td>
 	<td>2010</td>
 </tr>
 <tr>
-    <td>Март</td>
-	<td class="hot">-1.3</td>
+    <td>Февраль</td>
+	<td class="hot">0</td>
 	<td>2014</td>
-	<td class="cool">-7.7</td>
+	<td class="cool">-10.9</td>
+	<td>2011</td>
+</tr>
+<tr>
+    <td>Март</td>
+	<td class="hot">3.6</td>
+	<td>2017</td>
+	<td class="cool">-6.6</td>
 	<td>2013</td>
 </tr>
 <tr>
     <td>Апрель</td>
-	<td class="hot">8.0</td>
-	<td>2012</td>
-	<td class="cool">2.1</td>
-	<td>2009</td>
-</tr>
-<tr>
-    <td>Май</td>
-	<td class="hot">14.5</td>
-	<td>2014</td>
-	<td class="cool">9.6</td>
-	<td>2018</td>
-</tr>
-<tr>
-    <td>Июнь</td>
-	<td class="hot">20.1</td>
-	<td>2012</td>
-	<td class="cool">13.9</td>
+	<td class="hot">7</td>
+	<td>2008</td>
+	<td class="cool">2.8</td>
 	<td>2007</td>
 </tr>
 <tr>
+    <td>Май</td>
+	<td class="hot">15.1</td>
+	<td>2018</td>
+	<td class="cool">9.4</td>
+	<td>2017</td>
+</tr>
+<tr>
+    <td>Июнь</td>
+	<td class="hot">19.8</td>
+	<td>2013</td>
+	<td class="cool">13.6</td>
+	<td>2017</td>
+</tr>
+<tr>
     <td>Июль</td>
-	<td class="hot">21.8</td>
-	<td>2012</td>
-	<td class="cool">14.4</td>
-	<td>2014</td>
+	<td class="hot">24.4</td>
+	<td>2010</td>
+	<td class="cool">16.5</td>
+	<td>2017</td>
 </tr>
 <tr>
     <td>Август</td>
-	<td class="hot">23</td>
-	<td>2016</td>
-	<td class="cool">13.2</td>
-	<td>2015</td>
+	<td class="hot">19.7</td>
+	<td>2010</td>
+	<td class="cool">16.2</td>
+	<td>2012</td>
 </tr>
 <tr>
     <td>Сентябрь</td>
-	<td class="hot">12.6</td>
-	<td>2011</td>
-	<td class="cool">7.8</td>
+	<td class="hot">14.2</td>
+	<td>2006</td>
+	<td class="cool">10.7</td>
 	<td>2008</td>
 </tr>
 <tr>
     <td>Октябрь</td>
-	<td class="hot">6.2</td>
+	<td class="hot">8.7</td>
 	<td>2008</td>
-	<td class="cool">-1.5</td>
-	<td>2014</td>
+	<td class="cool">4.6</td>
+	<td>2009</td>
 </tr>
 <tr>
     <td>Ноябрь</td>
-	<td class="hot">1.8</td>
+	<td class="hot">4.4</td>
 	<td>2013</td>
-	<td class="cool">-10.5</td>
+	<td class="cool">-1.8</td>
 	<td>2016</td>
 </tr>
 <tr>
     <td>Декабрь</td>
-	<td class="hot">-5.5</td>
+	<td class="hot">3.1</td>
 	<td>2006</td>
-	<td class="cool">-15.4</td>
-	<td>2009</td>
+	<td class="cool">-8.3</td>
+	<td>2010</td>
 </tr>
 </table>
 
@@ -170,30 +170,30 @@
 </tr>
 <tr>
     <td>Зима</td>
-	<td class="hot">-8.5</td>
-	<td>2006-2007</td>
-	<td class="cool">-17.2</td>
+	<td class="hot">-0.3</td>
+	<td>2007-2008</td>
+	<td class="cool">-8.5</td>
 	<td>2009-2010</td>
 </tr>
 <tr>
     <td>Весна</td>
-	<td class="hot">5.9</td>
-	<td>2012</td>
-	<td class="cool">3.1</td>
-	<td>2013</td>
+	<td class="hot">7.3</td>
+	<td>2016</td>
+	<td class="cool">3.8</td>
+	<td>2006</td>
 </tr>
 <tr>
     <td>Лето</td>
-	<td class="hot">20.2</td>
-	<td>2016</td>
-	<td class="cool">15.9</td>
-	<td>2014</td>
+	<td class="hot">19.9</td>
+	<td>2010</td>
+	<td class="cool">15.8</td>
+	<td>2007</td>
 </tr>
 <tr>
     <td>Осень</td>
-	<td class="hot">5</td>
-	<td>2008</td>
-	<td class="cool">0.4</td>
+	<td class="hot">8.1</td>
+	<td>2011</td>
+	<td class="cool">5.4</td>
 	<td>2016</td>
 </tr>
 </table>
