@@ -200,7 +200,34 @@
 	
 </div>
 
-
+<script>
+//$(document).ready(function(){
+   $('#submit').on('click', function(e){
+	    e.preventDefault();//блокирует перезагрузку формы
+        var month = $('#month').val();
+	    var earth = $('#earth').val();
+        var update_stat = $('#update_stat').val();
+	     // alert(update_stat);
+        $.ajax({
+            url: "/ekb_archiv/",
+            type: "POST",
+            data:{
+                'month': month,
+				'earth': earth,
+				'update_stat': update_stat
+            },
+			success: function(response) {
+        if (response) {
+           // alert('Гусенька сосет у Бибова');
+        }
+    },
+            error: function(xhr, status, error) {
+        alert(xhr.responseText + '|\n' + status + '|\n' +error);
+          }
+        })
+    });
+	//}
+</script>
 
 <script>
 
