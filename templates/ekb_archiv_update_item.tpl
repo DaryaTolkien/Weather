@@ -9,11 +9,11 @@
 <button name="submit_form" onclick="AjaxFormRequest('form_id', '/ekb_archiv/')">+</button>
 </form></td>
 
-<td class="b">{{FEBRUARY}}<form method="post" class="table_admin">
+<td class="b"><span id="stat">{{FEBRUARY}}</span><form method="post" class="table_admin">
 <input name="earth" type="hidden" value="{{EARTH}}" id="earth">
 <input name="month" type="hidden" value="February" id="month">
 <input type="text" name="update_stat" autocomplete="off" id="update_stat" >
-<button name="submit_form" id="submit" >+</button>
+<button name="submit_form" id="submit_form" >+</button>
 </form></td>
 	
 <td class="c">{{MARCH}}<form method="post" action="/ekb_archiv/" class="table_admin">
