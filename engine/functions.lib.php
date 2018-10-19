@@ -36,18 +36,20 @@ function prepareVariables($page_name, $action = ""){
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
 			$vars["extr"] = get_archiv('ekb_archiv');
+			
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
 				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('ekb_archiv');
-				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
-			      update('ekb_archiv'); //меняем значение в БД
+				   if(isset($_POST["update_stat"])){   //если нажата кнопка формы то меняет значения в БД
+			           update('ekb_archiv'); //меняем значение в БД
+					   header("Location: ". $_SERVER["REQUEST_URI"]); //Обновляем страницу
 				}
 			}
 			else{
 				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
 				 }
 			break;
-		case "spb_archiv":
+		case "spb_archiv": //Страница архива Санкт-Петербурга
 			$vars["norma"] = get_norma('spb_archiv');
 			$vars["means"] = get_mean('spb_archiv');
 			$vars["extr"] = get_archiv('spb_archiv');
@@ -56,10 +58,6 @@ function prepareVariables($page_name, $action = ""){
 				$vars["update"] = get_archiv('spb_archiv');
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
 			      update('spb_archiv'); //меняем значение в БД
-					if(isset($_POST["submits"])){
-						$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
-				        $vars["update"] = get_archiv('spb_archiv');
-					}
 			      }
 			}
 			else{
@@ -112,7 +110,6 @@ function update($lol){
 	$valus = htmlspecialchars($_POST['update_stat']);
 	$value = (float) $valus;
 	$sql = "UPDATE $lol SET $month='$value' WHERE Earth=$earth";
-	//print_r($sql);die();
 	executeQuery($sql);
 }
 
