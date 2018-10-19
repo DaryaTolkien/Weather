@@ -214,7 +214,7 @@
 				'update_stat': update_stat
             },
 			success: function (html) {
-            //AjaxFormRequest();
+            AjaxFormRequest();
      },
             error: function(xhr, status, error) {
                 alert(xhr.responseText + '|\n' + status + '|\n' +error);

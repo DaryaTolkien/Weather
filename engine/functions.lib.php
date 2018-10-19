@@ -32,6 +32,7 @@ function prepareVariables($page_name, $action = ""){
 			$vars["future"] = get_future();
 			$vars["wind"] = get_future();
             break;
+			
         case "ekb_archiv": //Страница архива Екатеринбурга
 			$vars["norma"] = get_norma('ekb_archiv');
 			$vars["means"] = get_mean('ekb_archiv');
@@ -49,6 +50,7 @@ function prepareVariables($page_name, $action = ""){
 				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
 				 }
 			break;
+			
 		case "spb_archiv": //Страница архива Санкт-Петербурга
 			$vars["norma"] = get_norma('spb_archiv');
 			$vars["means"] = get_mean('spb_archiv');
