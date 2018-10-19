@@ -1,3 +1,6 @@
+
+
+
 /*
 $('#formSubscribe').submit(function(e) {
   e.preventDefault(); //принудительно блокируем все действия по отправке формы

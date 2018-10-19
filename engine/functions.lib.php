@@ -41,12 +41,11 @@ function prepareVariables($page_name, $action = ""){
 				$vars["update"] = get_archiv('ekb_archiv');
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
 			      update('ekb_archiv'); //меняем значение в БД
-			      }
+				}
 			}
 			else{
 				$vars["table"] = get_archiv('ekb_archiv'); //если нет, то просто генерируем данные
-            }
-			
+				 }
 			break;
 		case "spb_archiv":
 			$vars["norma"] = get_norma('spb_archiv');
@@ -57,6 +56,10 @@ function prepareVariables($page_name, $action = ""){
 				$vars["update"] = get_archiv('spb_archiv');
 				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
 			      update('spb_archiv'); //меняем значение в БД
+					if(isset($_POST["submits"])){
+						$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
+				        $vars["update"] = get_archiv('spb_archiv');
+					}
 			      }
 			}
 			else{

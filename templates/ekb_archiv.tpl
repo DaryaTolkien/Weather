@@ -201,13 +201,10 @@
 </div>
 
 <script>
-//$(document).ready(function(){
-   $('#submit').on('click', function(e){
-	    e.preventDefault();//блокирует перезагрузку формы
+   $('#submit_form').on('click', function(){
         var month = $('#month').val();
 	    var earth = $('#earth').val();
         var update_stat = $('#update_stat').val();
-	     // alert(update_stat);
         $.ajax({
             url: "/ekb_archiv/",
             type: "POST",
@@ -216,21 +213,34 @@
 				'earth': earth,
 				'update_stat': update_stat
             },
-			success: function(response) {
-        if (response) {
-           // alert('Гусенька сосет у Бибова');
-        }
-    },
+			success: function (html) {
+            AjaxFormRequest();
+     },
             error: function(xhr, status, error) {
-        alert(xhr.responseText + '|\n' + status + '|\n' +error);
-          }
-        })
+                alert(xhr.responseText + '|\n' + status + '|\n' +error);
+              }
+          })
     });
-	//}
+	
+function AjaxFormRequest(){
+		$.ajax({
+            url: "/ekb_archiv/",
+            type: "POST",
+            data: {
+                submits: submits,
+            },
+			success: function() { //Если все нормально
+				$("#stat").empty();
+                $("#stat").append(html);
+                alert('Load was performed.');
+                },
+			error: function(xhr, status, error) {
+                alert(xhr.responseText + '|\n' + status + '|\n' +error);
+              }
+	})};
 </script>
 
 <script>
-
 var arr_class = ['cool','hot','norma'];
 
 function table_colorize(elements, array_class, lol)
