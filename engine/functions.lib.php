@@ -40,7 +40,7 @@ function prepareVariables($page_name, $action = ""){
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
 				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('ekb_archiv');
-				   if(isset($_POST["update_stat"])){   //если нажата кнопка формы то меняет значения в БД
+				   if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
 			           update('ekb_archiv'); //меняем значение в БД
 					   header("Location: ". $_SERVER["REQUEST_URI"]); //Обновляем страницу
 				}
