@@ -55,11 +55,13 @@ function prepareVariables($page_name, $action = ""){
 			$vars["norma"] = get_norma('spb_archiv');
 			$vars["means"] = get_mean('spb_archiv');
 			$vars["extr"] = get_archiv('spb_archiv');
+			
 			if(isset($_SESSION['user'])){ //Проверяем зареган ли пользователь для возможности менять данные
 				$vars["table"] = renderPage("update_block"); //если да, то генерируем шаблон с формой для update
 				$vars["update"] = get_archiv('spb_archiv');
-				if(isset($_POST["submit_form"])){   //если нажата кнопка формы то меняет значения в БД
+				if(isset($_POST["update_stat"])){   //если нажата кнопка формы то меняет значения в БД
 			      update('spb_archiv'); //меняем значение в БД
+				  header("Location: ". $_SERVER["REQUEST_URI"]); //Обновляем страницу
 			      }
 			}
 			else{
@@ -144,31 +146,6 @@ function get_future(){
 	$weather = getAssocResult($sql);
 	return $weather;
 }
-
-//Функци получения погоды на город  //print_r($weather[0]['precipitation']); die();
-function get_weather(){
-	$sql = "SELECT * FROM `forecast`";
-	$weather = getAssocResult($sql);
-		switch($weather[0]['precipitation']){
-		  case 3: $weather[0]['precipitation'] = str_replace(3, "/images/sunno.png", $weather[0]['precipitation']); break;
-		  case 4: $weather[0]['precipitation'] = str_replace(4, "/images/run.png", $weather[0]['precipitation']); break;
-		  case 5: $weather[0]['precipitation'] = str_replace(5, "/images/run.png", $weather[0]['precipitation']); break;
-		  case 6: $weather[0]['precipitation'] = str_replace(6, "/images/snow.png", $weather[0]['precipitation']); break;
-		  case 7: $weather[0]['precipitation'] = str_replace(7, "/images/snow.png", $weather[0]['precipitation']); break;
-		  case 8: $weather[0]['precipitation'] = str_replace(8, "/images/funder.png", $weather[0]['precipitation']); break;
-		  case 10: $weather[0]['precipitation'] = str_replace(10, "/images/sun.png", $weather[0]['precipitation']); break;
-     	}
-	    switch($weather[0]['cloudiness']){
-		  case -1: $weather[0]['cloudiness'] = str_replace(-1, "туман", $weather[0]['cloudiness']);  break;
-		  case 0: $weather[0]['cloudiness'] = str_replace(0, "ясно", $weather[0]['cloudiness']);  break;
-		  case 1: $weather[0]['cloudiness'] = str_replace(1, "малооблачно", $weather[0]['cloudiness']);  break;
-		  case 2: $weather[0]['cloudiness'] = str_replace(2, "облачно", $weather[0]['cloudiness']);  break;
-		  case 3: $weather[0]['cloudiness'] = str_replace(3, "пасмурно", $weather[0]['cloudiness']);  break;
-     	}
-	
-    return $weather;
-}
-
 
 //функция возвращает меню
 function get_menu(){

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MMWEATHER>
+	<REPORT type="frc3">
+		<TOWN index="69" sname="%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3" latitude="60" longitude="30">
+                    			<FORECAST day="20" month="10" year="2018" hour="21" tod="3" predict="0" weekday="7">
+				<PHENOMENA cloudiness="3" precipitation="10" rpower="0" spower="0"/>
+				<PRESSURE max="766" min="766"/>
+				<TEMPERATURE max="9" min="7"/>
+				<WIND min="1" max="1" direction="7"/>
+				<RELWET max="82" min="77"/>
+
+				<HEAT min="5" max="5"/>
+			</FORECAST>
+                        			<FORECAST day="21" month="10" year="2018" hour="03" tod="0" predict="0" weekday="1">
+				<PHENOMENA cloudiness="3" precipitation="10" rpower="0" spower="0"/>
+				<PRESSURE max="767" min="766"/>
+				<TEMPERATURE max="7" min="7"/>
+				<WIND min="1" max="1" direction="6"/>
+				<RELWET max="85" min="82"/>
+
+				<HEAT min="4" max="4"/>
+			</FORECAST>
+                        			<FORECAST day="21" month="10" year="2018" hour="09" tod="1" predict="0" weekday="1">
+				<PHENOMENA cloudiness="1" precipitation="10" rpower="0" spower="0"/>
+				<PRESSURE max="767" min="767"/>
+				<TEMPERATURE max="8" min="6"/>
+				<WIND min="1" max="2" direction="6"/>
+				<RELWET max="85" min="71"/>
+
+				<HEAT min="3" max="3"/>
+			</FORECAST>
+                        			<FORECAST day="21" month="10" year="2018" hour="15" tod="2" predict="0" weekday="1">
+				<PHENOMENA cloudiness="3" precipitation="10" rpower="0" spower="0"/>
+				<PRESSURE max="767" min="767"/>
+				<TEMPERATURE max="11" min="9"/>
+				<WIND min="2" max="3" direction="6"/>
+				<RELWET max="67" min="64"/>
+
+				<HEAT min="6" max="6"/>
+			</FORECAST>
+            		</TOWN>
+	</REPORT>
+</MMWEATHER>

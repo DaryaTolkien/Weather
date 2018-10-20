@@ -200,6 +200,32 @@
 	
 </div>
 
+<script>
+$('#submit_form').on('click', function(){
+        var month = $('#month').val();
+	    var earth = $('#earth').val();
+        var update_stat = $('#update_stat').val();
+        $.ajax({
+            url: "/spb_archiv/",
+            type: "POST",
+            data:{
+                'month': month,
+				'earth': earth,
+				'update_stat': update_stat
+            },
+			success: function () {
+            lol();
+     },
+            error: function(xhr, status, error) {
+                alert(xhr.responseText + '|\n' + status + '|\n' +error);
+              }
+          })
+    });
+	
+function lol(){
+	//Что то что нужно вернуть, только пока я не знаю еще что надо
+};
+</script>
 
 
 <script>
