@@ -143,31 +143,6 @@ function get_future(){
 	return $weather;
 }
 
-//Функци получения погоды на город  //print_r($weather[0]['precipitation']); die();
-function get_weather(){
-	$sql = "SELECT * FROM `forecast`";
-	$weather = getAssocResult($sql);
-		switch($weather[0]['precipitation']){
-		  case 3: $weather[0]['precipitation'] = str_replace(3, "/images/sunno.png", $weather[0]['precipitation']); break;
-		  case 4: $weather[0]['precipitation'] = str_replace(4, "/images/run.png", $weather[0]['precipitation']); break;
-		  case 5: $weather[0]['precipitation'] = str_replace(5, "/images/run.png", $weather[0]['precipitation']); break;
-		  case 6: $weather[0]['precipitation'] = str_replace(6, "/images/snow.png", $weather[0]['precipitation']); break;
-		  case 7: $weather[0]['precipitation'] = str_replace(7, "/images/snow.png", $weather[0]['precipitation']); break;
-		  case 8: $weather[0]['precipitation'] = str_replace(8, "/images/funder.png", $weather[0]['precipitation']); break;
-		  case 10: $weather[0]['precipitation'] = str_replace(10, "/images/sun.png", $weather[0]['precipitation']); break;
-     	}
-	    switch($weather[0]['cloudiness']){
-		  case -1: $weather[0]['cloudiness'] = str_replace(-1, "туман", $weather[0]['cloudiness']);  break;
-		  case 0: $weather[0]['cloudiness'] = str_replace(0, "ясно", $weather[0]['cloudiness']);  break;
-		  case 1: $weather[0]['cloudiness'] = str_replace(1, "малооблачно", $weather[0]['cloudiness']);  break;
-		  case 2: $weather[0]['cloudiness'] = str_replace(2, "облачно", $weather[0]['cloudiness']);  break;
-		  case 3: $weather[0]['cloudiness'] = str_replace(3, "пасмурно", $weather[0]['cloudiness']);  break;
-     	}
-	
-    return $weather;
-}
-
-
 //функция возвращает меню
 function get_menu(){
     $sql = "SELECT * FROM `menu_bd` ORDER BY `id`";
